@@ -1,6 +1,25 @@
 
-def bubble_sort()
+def bubble_sort(array)
+    array_length = array.size
+    return array if array_length <= 1
 
+    loop do
+        swapped = false
+
+        (array_length-1).times do |i|
+            if array[i] > array[i+1]
+                array[i], array[i+1] = array[i+1], array[i]
+                swapped = true
+            end
+        end
+        puts swapped
+        break if not swapped
+    end
+
+    
+    array
 end
 
-p bubble_sort([4,3,78,2,0,2])
+unsorted_array = [11,5,2,7,4,5]
+
+p bubble_sort(unsorted_array)
